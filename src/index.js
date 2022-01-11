@@ -1,29 +1,19 @@
 import React from "react";
 import { render } from "react-dom";
 
-const returnStrings = () => {
-  return "ReturnString";
-};
+class Human {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  calllMyProfile() {
+    console.log(`Iam ${this.name} and ${this.age} years`);
+  }
+}
 
-const title = "Hello world2";
-const body = "こちらが本文です";
-var reactElement = (
-  <>
-    <p>{returnStrings()}</p>
-    <h1>{title}</h1>
-    <p>{body}</p>
-  </>
-); // JSXにはObjectが格納されている
+const Nakanishi = new Human("Nakanish", 16);
+console.log(Nakanishi);
 
-/**
- * console.log(reactElement);
- * {type: "h1", key: null, ref: null, props: Object, _owner: null…}
-type: "h1"
-key: null
-ref: null
-props: Object
-_owner: null
-_store: Object
- */
-
-render(reactElement, document.getElementById("root"));
+const Tanaka = new Human("Tanaka", 20);
+Tanaka.calllMyProfile();
+console.log(Tanaka);
