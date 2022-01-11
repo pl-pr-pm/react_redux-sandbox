@@ -1,19 +1,18 @@
 import React from "react";
 import { render } from "react-dom";
 
-class Human {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+class Human extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "ito" };
   }
-  calllMyProfile() {
-    console.log(`Iam ${this.name} and ${this.age} years`);
+  render() {
+    return (
+      <h2>
+        {this.state.name} {this.props.age}
+      </h2>
+    );
   }
 }
 
-const Nakanishi = new Human("Nakanish", 16);
-console.log(Nakanishi);
-
-const Tanaka = new Human("Tanaka", 20);
-Tanaka.calllMyProfile();
-console.log(Tanaka);
+render(<Human age="30" />, document.getElementById("root"));
