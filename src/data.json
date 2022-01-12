@@ -1,7 +1,0 @@
-{
-  "member": [
-    { "name": "sato", "age": 30 },
-    { "name": "kato", "age": 40 },
-    { "name": "nato", "age": 50 }
-  ]
-}
