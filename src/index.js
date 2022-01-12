@@ -2,10 +2,13 @@ import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import CApp from "./container/CApp";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import reducer from "./reducers/reducer";
+import thunk from "redux-thunk";
 
-const store = createStore(reducer);
+const middleWares = [thunk];
+
+const store = createStore(reducer, applyMiddleware(...middleWares));
 
 //
 store.subscribe(() => {
@@ -29,4 +32,5 @@ render(
 //   }
 // }
 
-// render(<App />, document.getElementById("root"));
+// import React from "react";
+//import { render } from "react-dom";

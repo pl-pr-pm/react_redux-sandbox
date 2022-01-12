@@ -1,4 +1,12 @@
-export const App = ({ number, day, title, plus, minus }) => {
+export const App = ({
+  number,
+  day,
+  title,
+  plus,
+  minus,
+  asyncMinus,
+  getJson
+}) => {
   return (
     <div>
       App{number} {day} {title}
@@ -15,6 +23,20 @@ export const App = ({ number, day, title, plus, minus }) => {
         }}
       >
         -10
+      </button>
+      <button
+        onClick={() => {
+          asyncMinus(10);
+        }}
+      >
+        -10
+      </button>
+      <button
+        onClick={() => {
+          getJson();
+        }}
+      >
+        GET
       </button>
     </div>
   );
