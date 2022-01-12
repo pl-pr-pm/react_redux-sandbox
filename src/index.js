@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import { App } from "./App";
+import CApp from "./container/CApp";
 import { createStore } from "redux";
-import { reducer } from "./reducer";
+import reducer from "./reducers/reducer";
 
 const store = createStore(reducer);
 
@@ -14,7 +14,7 @@ store.subscribe(() => {
 
 render(
   <Provider store={store}>
-    <App />
+    <CApp />
   </Provider>,
   document.getElementById("root")
 );
